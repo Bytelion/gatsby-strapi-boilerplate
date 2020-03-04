@@ -1,13 +1,22 @@
 {
   "info": {
-    "name": "Article"
+    "name": "Event"
   },
   "options": {
     "increments": true,
     "timestamps": true
   },
   "attributes": {
+    "date": {
+      "type": "datetime"
+    },
     "title": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "text"
+    },
+    "location": {
       "type": "string"
     },
     "image": {
@@ -15,19 +24,8 @@
       "via": "related",
       "plugin": "upload",
       "required": false
-    },
-    "caption": {
-      "type": "text"
-    },
-    "content": {
-      "type": "richtext"
-    },
-    "author": {
-      "plugin": "users-permissions",
-      "model": "user",
-      "via": "articles"
     }
   },
   "connection": "default",
-  "collectionName": "articles"
+  "collectionName": "events"
 }

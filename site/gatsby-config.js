@@ -3,6 +3,16 @@ module.exports = {
     title: `My Superblog`,
     description: `Gatsby blog with Strapi as a headless CMS`,
     author: `@gatsbyjs & @strapi`,
+    menuLinks: [
+      {
+        name: 'Articles',
+        link: '/articles'
+      },
+      {
+        name: 'Events',
+        link: '/events'
+      }
+    ]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,6 +29,7 @@ module.exports = {
         apiURL: `http://localhost:1337`,
         contentTypes: [
           `article`,
+          `event`,
           `user`
         ],
         queryLimit: 1000,
