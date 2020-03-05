@@ -33,6 +33,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             id
+            title
           }
         }
       }
@@ -44,7 +45,7 @@ exports.createPages = ({ actions, graphql }) => {
         path: `/${node.title.split(' ').join('_')}`,
         component: path.resolve(`src/templates/article.js`),
         context: {
-          id: node.id.split(' ').join('_')
+          id: node.id
         },
       })
     })

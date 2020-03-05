@@ -6,7 +6,7 @@ const Articles = ({ data }) => (
   <Layout>
     {data.allStrapiArticle.edges.map(doc =>
       <div>
-        <Link to={`/${doc.node.title}`}>{ doc.node.title }</Link>
+        <Link to={`/${doc.node.title.split(' ').join('_')}`}>{ doc.node.title }</Link>
       </div>
     )}
   </Layout>
