@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import Layout from '../layout'
+import Layout from '../components'
 
 const ArticleTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiArticle.title}</h1>
     <p>by <Link to={`/authors/User_${data.strapiArticle.author.id}`}>{data.strapiArticle.author.username}</Link></p>
-    <Img fluid={data.strapiArticle.image.childImageSharp.fluid}/>
-    <p>{data.strapiArticle.content}</p>
+    <Img fluid={data.strapiArticle.image.childImageSharp.fluid} />
+    <p>{data.strapiArticle.caption}</p>
   </Layout>
 )
 

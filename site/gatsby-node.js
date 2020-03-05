@@ -42,17 +42,42 @@ exports.createPages = ({ actions, graphql }) => {
     // Create pages for each article.
     result.data.allStrapiArticle.edges.forEach(({ node }) => {
       createPage({
-        path: `/${node.title.split(' ').join('_')}`,
+        path: `/articles/${node.title.split(' ').join('_').toLowerCase()}`,
         component: path.resolve(`src/templates/article.js`),
         context: {
-          id: node.id
+          id: node.id,
         },
       })
     })
   });
 
-  // Queries for articles and authors nodes to use in creating pages.
+  const getEvents = makeRequest(graphql, `
+    {
+      allStrapiEvent {
+        edges {
+          node {
+            id
+            title
+          }
+        }
+      }
+    }
+    `).then(result => {
+    // Create pages for each event.
+    result.data.allStrapiEvent.edges.forEach(({ node }) => {
+      createPage({
+        path: `/events/${node.title.split(' ').join('_').toLowerCase()}`,
+        component: path.resolve(`src/templates/event.js`),
+        context: {
+          id: node.id
+        }
+      })
+    })
+  });
+
+  // Queries for articles and events nodes to use in creating pages.
   return Promise.all([
-    getArticles
+    getArticles,
+    getEvents
   ])
 };

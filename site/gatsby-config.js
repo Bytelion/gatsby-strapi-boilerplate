@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `My Superblog`,
+    title: `Gatsby + Strapi`,
     description: `Gatsby blog with Strapi as a headless CMS`,
     author: `@gatsbyjs & @strapi`,
     menuLinks: [
@@ -16,6 +16,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        sassRuleTest: /\.global\.s(a|c)ss$/,
+        sassRuleModulesTest: /\.module\.s(a|c)ss$/,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
