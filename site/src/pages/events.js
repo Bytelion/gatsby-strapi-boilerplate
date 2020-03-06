@@ -16,12 +16,12 @@ export default Events
 
 export const query = graphql`
 	query EventQuery {
-    	allStrapiEvent {
+    allStrapiEvent {
 			edges {
-			node {
-				id
-				title
+				node {
+					id
+					title
+				}
 			}
 		}
-	}
-  }`
+	}`

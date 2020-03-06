@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dateformat": "^3.0.3",
     "gatsby": "^2.19.28",
     "gatsby-cli": "^2.10.0",
     "gatsby-image": "^2.2.42",

@@ -1,0 +1,116 @@
+// =============================================================================
+// Fonts
+// =============================================================================
+
+@mixin nd($weight: null) {
+	font-family: "Neue Haas Grotesk Display Std", sans-serif;
+
+	@if $weight !=null {
+		font-weight: $weight;
+	}
+}
+
+@mixin nt($weight: null) {
+	font-family: "Neue Haas Grotesk Text Std", sans-serif;
+
+	@if $weight !=null {
+		font-weight: $weight;
+	}
+}
+
+
+// Headings
+// =============================================================================
+
+@mixin h1($query: $min_md) {
+	@include nd(700);
+
+	font-size: 48px;
+	line-height: (64 / 48);
+
+	@media #{$query} {
+		font-size: 58px;
+		line-height: (85 / 58);
+	}
+}
+
+@mixin h2($query: $min_md) {
+	@include nd(700);
+
+	font-size: 38px;
+	line-height: (50 / 38);
+
+	@media #{$query} {
+		font-size: 48px;
+		line-height: (70 / 48);
+	}
+}
+
+@mixin h3($query: $min_md) {
+	@include nd(500);
+
+	font-size: 28px;
+	line-height: (42 / 28);
+
+	@media #{$query} {
+		font-size: 36px;
+		line-height: (52 / 36);
+	}
+}
+
+@mixin h4($query: $min_md) {
+	@include nd(500);
+
+	font-size: 26px;
+	line-height: (40 / 26);
+}
+
+@mixin h5($query: $min_md) {
+	@include nd(700);
+
+	font-size: 18px;
+	line-height: (27 / 18);
+}
+
+@mixin h6($query: $min_md) {
+	@include nd(700);
+
+	font-size: 14px;
+	line-height: (20 / 14);
+	text-transform: uppercase;
+}
+
+@mixin intro_text($query: $min_md) {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: (38 / 24);
+}
+
+@mixin body_text($query: $min_md) {
+	@include nt;
+
+	font-size: 18px;
+	line-height: (32 / 18);
+}
+
+@mixin small_text($query: $min_md) {
+	@include nt;
+
+	font-size: 15px;
+	line-height: (24 / 15);
+}
+
+@mixin label_text($query: $min_md) {
+	@include nt(700);
+
+	font-size: 12px;
+	line-height: (22 / 14);
+	text-transform: uppercase;
+}
+
+@mixin caption_text($query: $min_md) {
+	@include nt;
+
+	font-size: 12px;
+	line-height: (22 / 14);
+}

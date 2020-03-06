@@ -1,0 +1,34 @@
+/* ==========================================================================
+	News Details
+============================================================================= */
+
+.news_item_details {
+	@include small_text;
+
+	margin-bottom: 6px;
+}
+
+.news_item_detail {
+	display: inline-block;
+	vertical-align: middle;
+
+	&:first-child {
+
+		&:after {
+			content: "-";
+			margin: 0 4px;
+		}
+	}
+}
+
+.news_item_detail_hint {
+	@include visually_hide;
+}
+
+.news_item_detail_label {}
+
+.news_item_date_label {}
+
+.news_item_publisher {
+	@include visually_hide;
+}

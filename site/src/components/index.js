@@ -6,8 +6,8 @@ import Footer from "./footer"
 import "../styles/layout.global.scss"
 
 const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
+	<StaticQuery
+		query={graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
@@ -20,16 +20,16 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
-      <>
-        <Header
-          siteTitle={ data.site.siteMetadata.title }
-          menuLinks={ data.site.siteMetadata.menuLinks } />
-        <main className="page_main">{ children }</main>
-        <Footer />
-      </>
-    )}
-  />
+		render={data => (
+			<>
+				<Header
+					siteTitle={data.site.siteMetadata.title}
+					menuLinks={data.site.siteMetadata.menuLinks} />
+				<main className="page_main">{children}</main>
+				<Footer />
+			</>
+		)}
+	/>
 )
 
 export default Layout
