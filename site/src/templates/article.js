@@ -1,16 +1,18 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import Layout from '../components'
+import NewsDetails from '../components/news/news-details'
 
-const ArticleTemplate = ({ data }) => (
-  <Layout>
-    <h1>{data.strapiArticle.title}</h1>
-    <p>by <Link to={`/authors/User_${data.strapiArticle.author.id}`}>{data.strapiArticle.author.username}</Link></p>
-    <Img fluid={data.strapiArticle.image.childImageSharp.fluid} />
-    <p>{data.strapiArticle.caption}</p>
-  </Layout>
-)
+const ArticleTemplate = ({ data }) => {
+	return (<Layout>
+		<article class="news_entry" itemscope="itemscope" itemtype="http://schema.org/NewsArticle">
+			<div class="page_feature">
+				<NewsDetails item={data}></NewsDetails>
+			</div>
+		</article>
+	</Layout>
+	)
+}
 
 export default ArticleTemplate
 
